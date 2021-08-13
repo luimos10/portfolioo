@@ -1,0 +1,318 @@
+/* base reset */
+:root {
+    --main-white: #f3f2f2;
+    --main-red: #be3144;
+    --main-blue:linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    --main-gray:#60696B;
+    --main-black: #161925;
+    --main-blue-deep:#14213d;
+    --main-bf:linear-gradient(225deg, #0093E9 0%, #80D0C7 100%);
+    ;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    box-sizing: border-box;
+  
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size:1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--main-gray);
+   
+}
+h1 {
+    font-size: 7rem;
+    
+}
+h2{
+    font-size: 4.5rem;
+}
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+img {
+    display:block;
+    width:100%;
+    border-radius: 0.3rem 0.3rem 0 0; 
+}
+ul {
+    list-style: none;
+}
+
+
+
+/* --------nav---------- */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background: var(--main-red);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
+    z-index:10;
+    border-bottom: 4px solid var(--main-gray);
+
+}
+.nav-list {
+    display:flex;
+    margin-right: 2rem;
+    
+}
+.nav-list a {
+    display: block;
+    padding: 2rem 1rem;
+    font-size: 2.5rem;
+    color: var(--main-black);
+    font-weight: 600;
+    transition: background 0.3s ease-in;
+}
+.nav-list a:hover {
+    background-color: var(--main-gray);
+}
+
+/* welcome section */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100vh;
+    background-color:#161925;
+}
+
+.welcome-section > p {
+    font-size:1.8rem;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+    color: var(--main-red);
+}
+/* project section */
+
+.projects-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: var(--main-bf);
+}
+.projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--main-black);
+}
+.project-grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap:3.3rem;
+    width: 100%;
+    max-width:1280px;
+    margin:0;
+    margin-bottom: 6rem;
+
+
+}
+.projects-section-header {
+    color:var(--main-black);
+} 
+
+.project-image {
+    height: calc(100% - 5.5rem);
+    width: 100%;
+    object-fit: cover;
+  }
+
+.project-title {
+    font-size: 2rem;
+    padding: 1.2rem 0.5rem;
+    background: var(--main-blue-deep);
+    border-radius: 0 0 0.3rem 0.3rem; 
+    transition: background 0.3s ease-out;
+    transition: color 0.3s ease-in;
+    
+}
+.project-title:hover  {
+    font-size: 2rem;
+    padding: 1.2rem 0.5rem;
+    background: var(--main-gray);
+    color: var(--main-blue-deep); 
+}
+
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+.code:hover {
+    color: var(--main-black);
+}
+
+/* contact setcion */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height:100vh;
+    padding: 0 2.5rem;
+    background: var(--main-blue-deep);
+
+    
+}
+.contact-section-header > h2 {
+    font-size: 4rem;
+}
+.contact-section-header > p {
+    font-style: italic;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px; 
+    
+}
+.btn-show-all {
+    font-size: 2rem;
+    background: var(--main-blue-deep);
+    color: var(--main-gray);
+    transition: background 0.4s ease-out;
+}
+.btn-show-all:hover {
+    background: var(--main-gray);
+    color: var(--main-black);
+}
+.btn-show-all:hover > i {
+    transform: translateX(7px);
+}
+.btn-show-all > i {
+    margin-left: 10px;
+    transform: translateX(0);
+    transition: transform 0.4s ease-out;
+}
+
+.btn-contact-details {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+.btn-contact-details:hover {
+    transform: translateY(-5px);
+  }
+
+footer{
+    background: var(--main-red);
+    border-top:4px solid var(--main-gray);
+    color:var(--main-black);
+    font-weight: 600;
+    padding: 1rem;
+}
+footer > p {
+    margin:0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+
+/* * 1200px / 16px = 75em */ 
+@media (max-width: 90em) {
+  html {
+    font-size: 60%;
+  }
+}
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+    }
+  }
+  @media (max-width: 28.75em) {
+    .nav {
+      justify-content: center;
+    }
+  
+    .nav-list {
+      margin: 0 1rem;
+    }
+  }
+  @media (max-width: 28.75em) {
+    .contact-section-header > h2 {
+      font-size: 5rem;
+    }
+  }
+  
+  @media (max-width: 28.75em) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+}
+
+  @media (max-width: 30.625em) {
+    .projects-section {
+      padding: 5.5rem 1rem;
+    }
+  
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+ 
+
