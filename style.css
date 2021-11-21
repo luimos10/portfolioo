@@ -80,7 +80,7 @@ ul {
     top:0;
     left:0;
     width:100%;
-    background: var(--main-red);
+    background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
     box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
     z-index:10;
     border-bottom: 4px solid var(--main-gray);
